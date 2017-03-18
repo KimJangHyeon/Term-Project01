@@ -1,0 +1,9 @@
+﻿  TestApplications.cpp
+  PhoneLibrary.cpp
+d:\visual studio 2015\projects\projectobject01\phonelibrary.cpp(163): warning C4305: 'return': 'int'에서 'bool'(으)로 잘립니다.
+d:\visual studio 2015\projects\projectobject01\phonelibrary.cpp(166): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\visual studio 2015\projects\projectobject01\phonelibrary.cpp(170): warning C4800: 'int': 'true' 또는 'false'로 bool 값을 강제하고 있습니다(성능 경고).
+  코드를 생성하고 있습니다...
+d:\visual studio 2015\projects\projectobject01\phonelibrary.cpp(214): warning C4172: 지역 변수 또는 임시: nameIndex의 주소를 반환하고 있습니다.
+d:\visual studio 2015\projects\projectobject01\phonelibrary.cpp(193): warning C4172: 지역 변수 또는 임시: nameIndex의 주소를 반환하고 있습니다.
+  ProjectObject01.vcxproj -> D:\Visual Studio 2015\Projects\ProjectObject01\Debug\ProjectObject01.exe

@@ -1,0 +1,6 @@
+﻿  PhoneLibrary.cpp
+d:\visual studio 2015\projects\tproject01\phonelibrary.cpp(173): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\visual studio 2015\projects\tproject01\phonelibrary.cpp(279): warning C4101: 'searchingNumberChar' :참조되지 않은 지역 변수입니다.
+d:\visual studio 2015\projects\tproject01\phonelibrary.cpp(237): warning C4172: 지역 변수 또는 임시: nameIndex의 주소를 반환하고 있습니다.
+d:\visual studio 2015\projects\tproject01\phonelibrary.cpp(308): warning C4715: 'SearchByNumber': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  TProject01.vcxproj -> D:\Visual Studio 2015\Projects\TProject01\Debug\TProject01.exe

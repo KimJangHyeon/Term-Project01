@@ -58,6 +58,7 @@ void PhoneBook::Save() {
 		oPhoneBook << *iter << endl;
 	}
 	oPhoneBook.close();
+	NameListAndNumberList();
 }
 
 //namePhoneVector의 이름과 전화번호를 pair를 이용해 nameVector에 저장
@@ -266,7 +267,7 @@ void PhoneBook::NameNumberPair() {
 	}
 }
 
-bool PhoneNumberFront(string phoneNumber) {
+bool PhoneBook::PhoneNumberFront(string phoneNumber) {
 	bool key = true;
 	if (phoneNumber[0] != '0') key = false;
 	if (phoneNumber[1] != '1') key = false;
@@ -275,6 +276,20 @@ bool PhoneNumberFront(string phoneNumber) {
 	if (phoneNumber[7] != '-') key = false;
 	return key;
 }
+
+void PhoneBook::NameListAndNumberList() {
+	vector<pair<size_t, string>>::iterator ppiter;
+	indexOfMin = 0;
+	int i;
+	for (ppiter = phoneVector.begin(), i = 0; ppiter != phoneVector.end(); ++ppiter,++i) {
+		phoneIntList[i] = ppiter->first;
+		nameList[i] = ppiter->second;
+
+		if (ppiter->first < 10000000) indexOfMin = i + 1;
+		
+	}
+}
+
 string PhoneBook::SearchByNumber(string phoneNumber) {
 	char searchingNumberChar[8];
 	int searchingNumber;
@@ -313,9 +328,25 @@ string PhoneBook::SearchByNumber(string phoneNumber) {
 		phoneIntList[i] = ppiter->first;
 		nameList[i] = ppiter->second;
 	}
-
-	//
-
+	int indexOfName;
+	//알고리즘 
+	//첫 시작이 '0'인 경우
+	if (searchingNumber < 10000000) {
+		int first = 0;
+		int last = indexOfMin - 1;
+		indexOfName = BinarySearching(first, last, searchingNumber);
+	}
+	else {
+		int first = indexOfMin;
+		int last = phoneVector.size() - 1;
+		indexOfName = BinarySearching(first, last, searchingNumber);
+	}
+	if (indexOfName == -1) 
+		return "There is no such a number";
+	
+	else 
+		return nameList[indexOfName];
+	
 }
 //phone에 갯수 저장
 Message::Message() {
@@ -398,3 +429,22 @@ void Message::Delete(int index) {
 	Save();
 }
 
+int PhoneBook::BinarySearching(int first, int last, int searchingNumber) {
+	int middle;
+	
+	// high가 low보다 작아진다면 찾으려는 데이터가 데이터 집합에 없다.
+	while (first <= last)
+	{
+		// 중앙값은 low와 high를 더한 값을 2로 나누면 된다.
+		middle = (first + last) / 2;
+		// 만약 찾으려는 값이 중앙값보다 작다면 high를 mid - 1로 둔다.
+		if ( phoneIntList[middle]> searchingNumber) last = middle - 1;
+		// 만약 찾으려는 값이 중앙값보다 크다면 low를 mid + 1로 둔다.
+		else if (phoneIntList[middle] < searchingNumber) first = middle + 1;
+		// 중앙값과 찾으려는 값이 일치하면 mid를 반환한다.
+		else return middle;
+	}
+	// 데이터를 찾지 못하면 -1를 반환한다.
+		return -1;
+	
+}

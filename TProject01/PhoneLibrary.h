@@ -15,6 +15,9 @@ private:
 	vector<string>::iterator iter;
 	vector<pair<string, string>>::iterator piter;
 	int numberOfPeople;
+	int phoneIntList[1000];
+	string nameList[1000];
+	int indexOfMin;//만약 모두 10000000보다 작으면 없는 곳를 가르키고 있음
 	string modelNumber = "010***####";
 public:
 	PhoneBook();
@@ -33,6 +36,8 @@ public:
 	void NameNumberPair();
 	bool PhoneNumberFront(string phoneNumber);
 	string SearchByNumber(string phoneNumber);
+	void NameListAndNumberList();
+	int BinarySearching(int first, int last, int searchingNumber);//없으면 -1을 리턴
 };
 
 class Message {

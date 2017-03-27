@@ -1,0 +1,10 @@
+﻿  MyForm.cpp
+d:\visual studio 2015\projects\a\cppwinform1\MyForm.h(70): error C2728: 'System::String ^': 네이티브 배열은 이러한 형식을 포함할 수 없습니다.
+  d:\visual studio 2015\projects\a\cppwinform1\MyForm.h(70): note: '배열<System::String ^>'를 사용하시겠습니까?
+d:\visual studio 2015\projects\a\cppwinform1\MyForm.h(534): warning C4965: 정수 0을 암시적으로 boxing했습니다. nullptr 또는 명시적 캐스팅을 사용하십시오.
+  MyForm1.cpp
+d:\visual studio 2015\projects\a\cppwinform1\MyForm.h(70): error C2728: 'System::String ^': 네이티브 배열은 이러한 형식을 포함할 수 없습니다.
+  d:\visual studio 2015\projects\a\cppwinform1\MyForm.h(70): note: '배열<System::String ^>'를 사용하시겠습니까?
+d:\visual studio 2015\projects\a\cppwinform1\MyForm.h(534): warning C4965: 정수 0을 암시적으로 boxing했습니다. nullptr 또는 명시적 캐스팅을 사용하십시오.
+  MyForm21.cpp
+  코드를 생성하고 있습니다...
